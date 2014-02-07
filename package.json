@@ -1,0 +1,15 @@
+{
+  "name": "farewell",
+  "version": "1.0.0",
+  "description": "Alex Reardon's helix farewell card",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Reardon <alexreardon@gmail.com>",
+  "license": "BSD",
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-sass": "~0.7.2"
+  }
+}

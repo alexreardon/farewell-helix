@@ -1,0 +1,18 @@
+{
+  "name": "farewell",
+  "version": "1.0.0",
+  "authors": [
+    "Alex Reardon <alexreardon@gmail.com>"
+  ],
+  "license": "BSD",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.1.0+2"
+  }
+}
