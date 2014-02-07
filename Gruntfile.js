@@ -5,6 +5,7 @@ module.exports = function (grunt) {
 
         cssBuildFile: 'static/style/build.css',
         sassBootstrapFile: 'static/style/main.scss',
+        jsBuildFile: 'static/js/main.js',
 
         sass: {
             dev: {
@@ -33,22 +34,38 @@ module.exports = function (grunt) {
                 dest: 'index.html',
                 replacements: [
                     {
-                        from: '$STYLE',
+                        from: '-STYLE',
                         to: '<%= grunt.file.read(cssBuildFile) %>'
                     },
                     {
-                        from: '$JAVASCRIPT',
-                        to: 'console.log("success");'
+                        from: '-JAVASCRIPT',
+                        to: '<%= grunt.file.read(jsBuildFile) %>'
                     }
                 ]
+            }
+        },
+
+        watch: {
+            sass: {
+                files: 'static/style/**/*.scss',
+                tasks: ['sass:dev', 'replace']
+            },
+            html: {
+                files: 'index.prebuild.html',
+                tasks: ['replace']
+            },
+            js: {
+                files: 'static/js/**/*.js',
+                tasks: ['replace']
             }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-text-replace');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['sass:dev', 'replace']);
+    grunt.registerTask('dev', ['sass:dev', 'replace', 'watch']);
     grunt.registerTask('prod', ['sass:prod', 'replace'])
 
 };

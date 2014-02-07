@@ -15,6 +15,7 @@ build
 .grunt
 
 index.html
+static/style/build.css.map
 node_modules
 bower_components
 .sass-cache/

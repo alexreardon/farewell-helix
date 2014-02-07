@@ -1,0 +1,15 @@
+section {
+  .container {
+    margin-top: 100px;
+    height: 500px;
+
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 10px;
+    @include box-shadow(2px 2px 6px rgba(0, 0, 0, .175));
+
+    header {
+
+    }
+
+  }
+}
