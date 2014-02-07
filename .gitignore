@@ -14,6 +14,7 @@ results
 build
 .grunt
 
+index.html
 node_modules
 bower_components
 .sass-cache/
